@@ -4,6 +4,17 @@ All notable changes to this extension are documented here. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.5] - 2026-06-18
+
+### Changed
+- README rewritten to match gold-template structure: Quick Answer block,
+  gold-template section order, Configuration table sourced from system.xml,
+  corrected product page URL, and accurate feature descriptions.
+- Removed unverified claims (business hours, icon color pickers, offset
+  fields, analytics events) that were not present in system.xml.
+
+---
+
 ## [1.1.0] -- Marketplace preparation
 
 ### Changed
