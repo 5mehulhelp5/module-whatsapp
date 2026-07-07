@@ -1,9 +1,4 @@
 <?php
-/**
- * Copyright © Panth Infotech. All rights reserved.
- *
- * WhatsApp Category ViewModel
- */
 declare(strict_types=1);
 
 namespace Panth\WhatsApp\ViewModel;
@@ -14,20 +9,10 @@ use Panth\WhatsApp\Helper\Data as WhatsAppHelper;
 
 class Category implements ArgumentInterface
 {
-    /**
-     * @var WhatsAppHelper
-     */
     private $whatsappHelper;
 
-    /**
-     * @var Registry
-     */
     private $registry;
 
-    /**
-     * @param WhatsAppHelper $whatsappHelper
-     * @param Registry $registry
-     */
     public function __construct(
         WhatsAppHelper $whatsappHelper,
         Registry $registry
@@ -36,32 +21,17 @@ class Category implements ArgumentInterface
         $this->registry = $registry;
     }
 
-    /**
-     * Check if WhatsApp is enabled for category pages
-     *
-     * @return bool
-     */
     public function isEnabled(): bool
     {
         return $this->whatsappHelper->isWhatsAppEnabled()
             && $this->whatsappHelper->isWhatsAppCategoryEnabled();
     }
 
-    /**
-     * Get current category
-     *
-     * @return \Magento\Catalog\Model\Category|null
-     */
     public function getCategory()
     {
         return $this->registry->registry('current_category');
     }
 
-    /**
-     * Get WhatsApp URL for category inquiry
-     *
-     * @return string
-     */
     public function getWhatsAppUrl(): string
     {
         $category = $this->getCategory();
@@ -79,21 +49,11 @@ class Category implements ArgumentInterface
         return $whatsappUrl;
     }
 
-    /**
-     * Get button text
-     *
-     * @return string
-     */
     public function getButtonText(): string
     {
         return $this->whatsappHelper->getWhatsAppCategoryButtonText();
     }
 
-    /**
-     * Get custom CSS classes from admin config
-     *
-     * @return string
-     */
     public function getCustomCssClasses(): string
     {
         return $this->whatsappHelper->getCustomCssClasses();
